@@ -53,8 +53,6 @@ TARGET_OBJS_PATH := $(TARGET_OUT_PATH)/objs
 # =========================================================
 # Allow users to specify the toolchain.
 
-# TODO NDK_TOOLCHAIN -> configurable APP_TOOLCHAIN
-
 NDK_TOOLCHAIN := $(strip $(NDK_TOOLCHAIN))
 ifdef NDK_TOOLCHAIN
     # check that the toolchain name is supported

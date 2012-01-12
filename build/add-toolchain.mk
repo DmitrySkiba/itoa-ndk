@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-# This script is included repeatedly by main.mk to add a new toolchain
+# This script is included repeatedly by boostrap.mk to add a new toolchain
 #  definition to the Itoa NDK build system.
 #
 # 'toolchain_config' must be defined as the path of a toolchain

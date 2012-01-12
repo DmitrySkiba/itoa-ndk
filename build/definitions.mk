@@ -385,6 +385,14 @@ static-library-path = $(TARGET_OUT_PATH)/lib$1.a
 # -----------------------------------------------------------------------------
 shared-library-path = $(TARGET_OUT_PATH)/lib$1.so
 
+# -----------------------------------------------------------------------------
+# Function  : executable-path
+# Arguments : 1: executable module name (e.g. 'foo')
+# Returns   : location of generated exectuable name (e.g. '..../foo)
+# Usage     : $(call executable-path,<modulename>)
+# -----------------------------------------------------------------------------
+executable-path = $(TARGET_OUT)/$1
+
 # =============================================================================
 #
 # Build commands support

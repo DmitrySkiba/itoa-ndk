@@ -18,10 +18,15 @@
 # Setup variables.
 
 ifndef APP_IS_ITOA
+ifndef APP_NO_ITOA
   TARGET_ITOA_LIBRARIES := $(wildcard $(ITOA_SYSROOT)/usr/lib/*.so)
 endif
+endif
 
-TARGET_ITOA_CFLAGS := -I$(ITOA_SYSROOT)/usr/include
+ifndef APP_NO_ITOA
+  TARGET_ITOA_CFLAGS := -I$(ITOA_SYSROOT)/usr/include
+endif
+
 TARGET_ITOA_CFLAGS += -D__OBJC2__
 
 TARGET_ITOA_OBJCFLAGS := $(TARGET_ITOA_CFLAGS) \

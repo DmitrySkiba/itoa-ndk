@@ -62,6 +62,7 @@ endif
 CLEAR_VARS                := $(BUILD_SYSTEM)/clear-vars.mk
 BUILD_STATIC_LIBRARY      := $(BUILD_SYSTEM)/build-static-library.mk
 BUILD_SHARED_LIBRARY      := $(BUILD_SYSTEM)/build-shared-library.mk
+BUILD_EXECUTABLE          := $(BUILD_SYSTEM)/build-executable.mk
 
 # This is the list of directories containing dependency information
 # generated during the build. It will be updated by build scripts
