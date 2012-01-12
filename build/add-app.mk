@@ -15,19 +15,11 @@
 # limitations under the License.
 #
 
-# =========================================================
-# Define application variables.
-
-# Variables that evaluated once.
-APP_CONST_VARS := APP_ABIS APP_IS_ITOA \
-    APP_PROJECT_PATH APP_MODULE_MK \
-    APP_OPTIM APP_OPTIM_CFLAGS \
-    APP_BIN_PATH APP_TMP_PATH \
-    APP_CLEAN_MODULES_BIN_PATH 
-
-# Variables that evaluated several times (for each abi).
-# They are all references.
-APP_REF_VARS := APP_MODULES_BIN_PATH
+# Note that the following APP_ variables are evaluated for
+# each abi so you can use TARGET_ variables in them:
+#  APP_MODULES_BIN_PATH
+#
+# All other APP_ variables are evaluated once.
 
 # =========================================================
 # If NDK_PROJECT_PATH is not defined, let it be the current path.

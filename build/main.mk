@@ -51,7 +51,7 @@ ITOA_SYSROOT = $(ITOA_ROOT)/platform/arch-$(TARGET_ARCH)
 ifdef APP_IS_ITOA
   APP_IS_LIBRARY := true
   APP_MODULES_BIN_PATH = $(ITOA_SYSROOT)/usr/lib
-  APP_MODULES_CLEAR_BIN := true
+  APP_CLEAN_MODULES_BIN_PATH := true
 endif
 
 # =========================================================
