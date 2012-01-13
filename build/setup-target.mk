@@ -116,5 +116,5 @@ include $(APP_MODULE_MK)
 $(call set-current-abi-var,APP_BINARIES_TO_INSTALL)
 $(call set-current-abi-var,APP_STATIC_LIBRARIES)
 $(call set-current-abi-var,APP_SHARED_LIBRARIES)
-$(call set-current-abi-var,APP_MODULES_BIN_PATH)
+$(call set-current-abi-var,APP_LIBRARY_BIN_PATH)
 

@@ -17,7 +17,7 @@
 
 # Note that the following APP_ variables are evaluated for
 # each abi so you can use TARGET_ variables in them:
-#  APP_MODULES_BIN_PATH
+#  APP_LIBRARY_BIN_PATH
 #
 # All other APP_ variables are evaluated once.
 
@@ -71,8 +71,12 @@ ifndef APP_TMP_PATH
   APP_TMP_PATH = $(APP_PROJECT_PATH)/tmp
 endif
 
-ifndef APP_CLEAN_MODULES_BIN_PATH
-  APP_CLEAN_MODULES_BIN_PATH := true
+ifndef APP_LIBRARY_BIN_PATH
+    APP_LIBRARY_BIN_PATH = $(APP_PROJECT_PATH)/lib
+endif
+
+ifndef APP_CLEAN_LIBRARY_BIN_PATH
+  APP_CLEAN_LIBRARY_BIN_PATH := true
 endif
 
 # =========================================================

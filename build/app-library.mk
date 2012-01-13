@@ -21,7 +21,7 @@
 #   $1: binary
 define wire-binary
   copy-module-binaries: $1
-  ifeq ($(APP_CLEAN_MODULES_BIN_PATH),true)
+  ifeq ($(APP_CLEAN_LIBRARY_BIN_PATH),true)
     $1: clean-module-bin-paths
   endif
 endef # wire-binary
@@ -30,21 +30,21 @@ endef # wire-binary
 # Rules.
 
 # Clear all modules bin paths.
-ifeq ($(APP_CLEAN_MODULES_BIN_PATH),true)
+ifeq ($(APP_CLEAN_LIBRARY_BIN_PATH),true)
 clean-module-bin-paths: PRIVATE_PATHS := \
-  $(foreach abi,$(APP_ABIS),$(call get-abi-var,$(abi),APP_MODULES_BIN_PATH))
+  $(foreach abi,$(APP_ABIS),$(call get-abi-var,$(abi),APP_LIBRARY_BIN_PATH))
 clean-module-bin-paths:
 	@echo "Cleaning module bin paths..."
 	$(hide) rm -rf $(PRIVATE_PATHS)
 	$(hide) mkdir -p $(PRIVATE_PATHS)
-endif # APP_CLEAN_MODULES_BIN_PATH
+endif # APP_CLEAN_LIBRARY_BIN_PATH
 
 # Copy binaries.
 ALL_COPIED_BINARIES := $(foreach abi,$(APP_ABIS),\
   $(call copy-binaries,\
     $(call get-abi-var,$(abi),APP_STATIC_LIBRARIES) \
       $(call get-abi-var,$(abi),APP_SHARED_LIBRARIES),\
-    $(call get-abi-var,$(abi),APP_MODULES_BIN_PATH))\
+    $(call get-abi-var,$(abi),APP_LIBRARY_BIN_PATH))\
 )
 
 # Wire binaries and targets.

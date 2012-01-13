@@ -50,8 +50,7 @@ ITOA_SYSROOT = $(ITOA_ROOT)/platform/arch-$(TARGET_ARCH)
 # Check if we are building the Itoa itself.
 ifdef APP_IS_ITOA
   APP_IS_LIBRARY := true
-  APP_MODULES_BIN_PATH = $(ITOA_SYSROOT)/usr/lib
-  APP_CLEAN_MODULES_BIN_PATH := true
+  APP_LIBRARY_BIN_PATH = $(ITOA_SYSROOT)/usr/lib
 endif
 
 # =========================================================
@@ -84,7 +83,7 @@ ALL_DEPENDENCY_PATHS := $(sort $(ALL_DEPENDENCY_PATHS))
 # There are two possibilities:
 #  1. If APP_IS_LIBRARY is 'true' then instead of building
 #     app we copy module binaries (static and shared libraries)
-#     to APP_MODULES_BIN_PATH.
+#     to APP_LIBRARY_BIN_PATH.
 #  2. Else (the default) we build app (apk) and also handle
 #     install-app and run-app targets.
 
